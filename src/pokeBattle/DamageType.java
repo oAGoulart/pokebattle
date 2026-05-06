@@ -1,4 +1,4 @@
-package pokeBattle;
+package pokebattle;
 
 public enum DamageType
 {
@@ -7,10 +7,10 @@ public enum DamageType
   private double modifier_;
   
   static {
-    NONE.modifier_ = 0.0;
-    NOT_EFFECTIVE.modifier_ = 0.5;
-    NORMAL.modifier_ = 1.0;
-    SUPER_EFFECTIVE.modifier_ = 2.0;
+    NONE.setModifier_(0.0);
+    NOT_EFFECTIVE.setModifier_(0.5);
+    NORMAL.setModifier_(1.0);
+    SUPER_EFFECTIVE.setModifier_(2.0);
   }
   
   @Override
@@ -28,5 +28,10 @@ public enum DamageType
   public double getModifier()
   {
     return modifier_;
+  }
+  
+  private void setModifier_(double value)
+  {
+    modifier_ = value;
   }
 }

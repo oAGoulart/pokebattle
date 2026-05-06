@@ -1,17 +1,17 @@
-package pokeBattle;
+package pokebattle;
 
 public final class Pokemon
 {
-  private static final int minHealth_ = 10;
-  private String name_;
-  private PokemonType type_;
+  private static final int MIN_HEALTH = 10;
+  private final String name_;
   private int health_;
+  protected final PokemonType type_;
   
   Pokemon(String name, PokemonType type, int health)
   {
     name_ = name;
     type_ = type;
-    health_ = Math.max(health, minHealth_);
+    health_ = Math.max(health, MIN_HEALTH);
     System.out.printf(name_ + " created with %d health\n", health_);
   }
   

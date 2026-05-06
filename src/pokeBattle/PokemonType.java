@@ -1,4 +1,4 @@
-package pokeBattle;
+package pokebattle;
 
 import java.util.EnumMap;
 import java.util.Map;
@@ -14,9 +14,14 @@ public enum PokemonType
     effectiveness_.put(target, effect);
   }
   
+  private void setEffectiveness_()
+  {
+    effectiveness_ = new EnumMap<>(PokemonType.class);
+  }
+  
   static {
     for (PokemonType type : values()) {
-      type.effectiveness_ = new EnumMap<>(PokemonType.class);
+      type.setEffectiveness_();
     }
     
     FIRE.setEffectiveness_(FIRE, DamageType.NOT_EFFECTIVE);
